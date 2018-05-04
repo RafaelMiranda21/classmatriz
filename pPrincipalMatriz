@@ -1,0 +1,21 @@
+#include <iostream>
+#include "matrizes.h"
+#include "matrizes.cpp"
+
+int main()
+{
+	int ql1,qc1,ql2,qc2;
+	
+	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
+	cin>>ql1>>qc1;
+	
+	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
+	cin>>ql2>>qc2;
+	
+	matriz a[ql1,qc1], b[ql2,qc2];
+	
+	a.lermat();
+	cout<<"\n";
+	b.lermat();
+	cout<<"\n\n";  
+}
