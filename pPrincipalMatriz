@@ -1,6 +1,6 @@
 #include <iostream>
-#include "matrizes.h"
-#include "matrizes.cpp"
+#include "matriz.h"
+#include "matriz.cpp"
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
 	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
 	cin>>ql2>>qc2;
 	
-	matriz a[ql1,qc1], b[ql2,qc2];
+	matriz a(ql1,qc1), b(ql2,qc2);
 	
 	a.lermat();
 	cout<<"\n";
