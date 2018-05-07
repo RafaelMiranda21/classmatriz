@@ -1,14 +1,12 @@
-#include <iostream>
 #include "matriz.h"
-
+#include <iostream>
 using namespace std;
-
 
 matriz::matriz(int nl, int nc)
 {
 	mat = new int *[nl];
 	
-	for(int i=0;i<x;i++)
+	for(int i=0;i<nl;i++)
 	{
 		mat[i] = new int[nc]; 
 	}
@@ -19,13 +17,14 @@ matriz::matriz(int nl, int nc)
 	
 }
 
-bool matriz::lermat()
+void matriz::lermat()
 {
+	
 	for(int i=0;i<ql;i++)
 	{
 		for(int j=0;j<qc;j++)
 		{
-			cin>>mat[i][j];
+		  cin>>mat[i][j];
 		}
 	}
 	
@@ -43,7 +42,7 @@ void matriz::impmat()
 	
 }
 
-matriz::matriz()
+matriz::~matriz()
 {
 	for(int i=0; i<ql;i++)
 	{
