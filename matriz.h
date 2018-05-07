@@ -1,17 +1,16 @@
-#define MATRIZ_H
 #ifndef MATRIZ_H
-
+#define MATRIZ_H
 
 
 class matriz
 {
-	privete:
+private:
 	int **mat;
 	int ql,qc,l,c;
 	
-	public:
+public:
 	matriz(int nl, int nc);
-	bool lermat();
+	void lermat();
 	void impmat();
 	/*bool somamat(matriz x);
 	bool subtmat(matriz x);
@@ -21,10 +20,8 @@ class matriz
 	bool matsim();
 	bool matantsim();
 	*/ 
-	matriz();
-	
-	
-	
+	~matriz();
+
 };
 
 
