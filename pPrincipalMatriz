@@ -1,21 +1,220 @@
-#include <iostream>
 #include "matriz.h"
 #include "matriz.cpp"
+#include <iostream>
 
 int main()
 {
-	int ql1,qc1,ql2,qc2;
-	
+	int ql1,qc1,ql2,qc2,numero;
+
 	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
 	cin>>ql1>>qc1;
-	
-	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
+
+    cout<<"\n";
+
+	cout<<"Digite o limite de linhas e de colunas da segunda matriz\n";
 	cin>>ql2>>qc2;
-	
-	matriz a(ql1,qc1), b(ql2,qc2);
-	
-	a.lermat();
+
+	matriz mat1(ql1,qc1), mat2(ql2,qc2) , mat3(ql1,qc1);
+
+    cout<<"\n\n";
+
+    int escolha;
+
+    cout<<"Digite os valores da primeira matriz!\n";
+	mat1.lermat();
 	cout<<"\n";
-	b.lermat();
-	cout<<"\n\n";  
+	cout<<"Digite os valores da segunda matriz!\n";
+	mat2.lermat();
+	cout<<"\n\n";
+
+	cout<<"\t\t\t\tescolha a operacao a ser executada!!\n";
+
+	cout<<"Tecle '1' Para obter a soma das duas matrizes\n";
+	cout<<"Tecle '2' Para obter a subtracao das duas matrizes\n";
+	cout<<"Tecle '3' Para obter a multiplicacao das duas matrizes\n";
+	cout<<"Tecle '4' Para saber se a matriz e triangular superior\n";
+	cout<<"Tecle '5' Para saber se a matriz e triangular inferior\n";
+	cout<<"Tecle '6' Para saber se a matriz e simetrica\n";
+	cout<<"Tecle '7' Para saber se a matriz e ant simetrica\n\n";
+
+    cout<<"Sua escolha e: ";
+	cin>>escolha;
+    cout<<"\n\n";
+	switch(escolha)
+	{
+    case 1:
+        cout<<"\t\t\tSoma das matrizes!\n\n";
+        if(mat3.somamat(mat1,mat2))
+        {
+         mat3.impmat();
+        }
+        else
+        {
+          cout<<"nao e possivel obter a soma!";
+        }
+        break;
+
+    case 2:
+        cout<<"\t\t\tSubtracao das matrizes!\n\n";
+
+        cout<<"Tecle 1 se quiser fazer matriz 1 - matriz 2\n";
+        cout<<"Tecle 2 se quiser fazer matriz 2 - matriz 1\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+
+        cout<<"\n\n";
+
+        if(numero == 1)
+        {
+           if(mat3.subtmat(mat1 , mat2))
+           {
+             mat3.impmat();
+           }
+           else
+           {
+             cout<<"nao e possivel obter a subtracao!";
+           }
+        }
+        else
+        {
+           if(mat3.subtmat(mat2 , mat1))
+           {
+             mat3.impmat();
+           }
+           else
+           {
+             cout<<"nao e possivel obter a subtracao!";
+           }
+        }
+        break;
+
+    case 3:
+         cout<<"\t\t\tmultiplicacao das matrizes!\n\n";
+
+        if(mat3.multmat(mat1 , mat2))
+        {
+            mat3.impmat();
+        }
+        else
+        {
+            cout<<"nao e possivel obter a multiplicacao!";
+        }
+        break;
+
+    case 4:
+         cout<<"\t\t\tSaber se e uma matriz triangular superior!\n\n";
+         cout<<"Qual matriz deseja verificar?\n";
+         cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+         cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+         cout<<"sua escolha e: ";
+         cin>>numero;
+
+         cout<<"\n\n";
+
+        if(numero == 1)
+        {
+            if(mat1.trisup())
+            {
+              cout<<"Sim e uma matriz triangular superior!";
+            }
+            else
+            {
+              cout<<"Nao e uma matriz triangular superior!";
+            }
+        }
+        else
+        {
+            if(mat2.trisup())
+           {
+             cout<<"Sim e uma matriz triangular superior!";
+           }
+            else
+           {
+             cout<<"Nao e uma matriz triangular superior!";
+           }
+        }
+        break;
+
+    case 5:
+        cout<<"\t\t\tSaber se e uma matriz triangular inferior!\n\n";
+         cout<<"Qual matriz deseja verificar?\n";
+         cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+         cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+         cout<<"sua escolha e: ";
+         cin>>numero;
+
+         cout<<"\n\n";
+
+        if(numero == 1)
+        {
+            if(mat1.triinf())
+            {
+              cout<<"Sim e uma matriz triangular inferior!";
+            }
+            else
+            {
+              cout<<"Nao e uma matriz triangular inferior!";
+            }
+        }
+        else
+        {
+            if(mat2.triinf())
+           {
+             cout<<"Sim e uma matriz triangular inferior!";
+           }
+            else
+           {
+             cout<<"Nao e uma matriz triangular inferior!";
+           }
+        }
+        break;
+
+    case 6:
+        cout<<"\t\t\tSaber se e uma matriz simetrica!\n\n";
+         cout<<"Qual matriz deseja verificar?\n";
+         cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+         cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+         cout<<"sua escolha e: ";
+         cin>>numero;
+
+         cout<<"\n\n";
+
+         if(numero == 1)
+         {
+             if(mat1.matsim())
+             {
+              cout<<"Sim e uma matriz simetrica!";
+             }
+             else
+             {
+              cout<<"Nao e uma matriz simetrica!";
+             }
+         }
+
+         if(numero == 2)
+         {
+             if(mat2.matsim())
+             {
+              cout<<"Sim e uma matriz simetrica!";
+             }
+             else
+             {
+              cout<<"Nao e uma matriz simetrica!";
+             }
+         }
+         break;
+
+
+
+
+    default:
+        cout<<"VALOR TECLADO INVALIDO PROGRAMA FINALIZADO!!";
+
+	}
+cout<<"\n\n\n";
+
+
+
+
 }
+
