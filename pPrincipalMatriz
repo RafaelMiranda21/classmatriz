@@ -35,7 +35,9 @@ int main()
 	cout<<"Tecle '4' Para saber se a matriz e triangular superior\n";
 	cout<<"Tecle '5' Para saber se a matriz e triangular inferior\n";
 	cout<<"Tecle '6' Para saber se a matriz e simetrica\n";
-	cout<<"Tecle '7' Para saber se a matriz e ant simetrica\n\n";
+	cout<<"Tecle '7' Para saber se a matriz e anti-simetrica\n";
+	cout<<"Tecle '8' Para saber se a matriz e uma matriz identidade\n";
+	cout<<"Tecle '9' Para saber a matriz transposta\n\n";
 
     cout<<"Sua escolha e: ";
 	cin>>escolha;
@@ -137,13 +139,13 @@ int main()
 
     case 5:
         cout<<"\t\t\tSaber se e uma matriz triangular inferior!\n\n";
-         cout<<"Qual matriz deseja verificar?\n";
-         cout<<"Tecle '1' se deseja verificar a matriz 1\n";
-         cout<<"Tecle '2' se deseja verificar a matriz 2\n";
-         cout<<"sua escolha e: ";
-         cin>>numero;
+        cout<<"Qual matriz deseja verificar?\n";
+        cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+        cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
 
-         cout<<"\n\n";
+        cout<<"\n\n";
 
         if(numero == 1)
         {
@@ -171,13 +173,13 @@ int main()
 
     case 6:
         cout<<"\t\t\tSaber se e uma matriz simetrica!\n\n";
-         cout<<"Qual matriz deseja verificar?\n";
-         cout<<"Tecle '1' se deseja verificar a matriz 1\n";
-         cout<<"Tecle '2' se deseja verificar a matriz 2\n";
-         cout<<"sua escolha e: ";
-         cin>>numero;
+        cout<<"Qual matriz deseja verificar?\n";
+        cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+        cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
 
-         cout<<"\n\n";
+        cout<<"\n\n";
 
          if(numero == 1)
          {
@@ -204,6 +206,107 @@ int main()
          }
          break;
 
+    case 7:
+        cout<<"\t\t\tSaber se e uma matriz anti-simetrica!\n\n";
+        cout<<"Qual matriz deseja verificar?\n";
+        cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+        cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+
+        cout<<"\n\n";
+
+
+         if(numero == 1)
+         {
+             if(mat1.matantsim())
+             {
+              cout<<"Sim e uma matriz anti-simetrica!";
+             }
+             else
+             {
+              cout<<"Nao e uma matriz anti-simetrica!";
+             }
+         }
+
+         if(numero == 2)
+         {
+             if(mat2.matantsim())
+             {
+              cout<<"Sim e uma matriz anti-simetrica!";
+             }
+             else
+             {
+              cout<<"Nao e uma matriz anti-simetrica!";
+             }
+         }
+         break;
+
+    case 8:
+        cout<<"\t\t\tSaber se e uma matriz identidade!\n\n";
+        cout<<"Qual matriz deseja verificar?\n";
+        cout<<"Tecle '1' se deseja verificar a matriz 1\n";
+        cout<<"Tecle '2' se deseja verificar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+
+        cout<<"\n\n";
+
+        if(numero == 1)
+        {
+            if(mat1.matidentidade())
+            {
+                cout<<"Sim e uma matriz identidade!";
+            }
+            else
+            {
+                cout<<"Nao e uma matriz identidade!";
+            }
+        }
+
+        if(numero == 2)
+        {
+            if(mat2.matidentidade())
+            {
+                cout<<"Sim e uma matriz identidade!";
+            }
+            else
+            {
+                cout<<"Nao e uma matriz identidade!";
+            }
+        }
+        break;
+
+    case 9:
+        cout<<"\t\t\tPara saber a matriz transposta!\n\n";
+        cout<<"Qual matriz deseja verificar?\n";
+        cout<<"Tecle '1' se deseja transformar a matriz 1\n";
+        cout<<"Tecle '2' se deseja transformar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+
+        cout<<"\n\n";
+
+        if(numero == 1)
+        {
+            mat1.mattransposta();
+        }
+
+        if(numero == 2)
+        {
+            mat2.mattransposta();
+        }
+        break;
+        
+        
+        
+        
+
+
+
+
+
+
 
 
 
@@ -217,4 +320,3 @@ cout<<"\n\n\n";
 
 
 }
-
