@@ -89,9 +89,9 @@ bool matriz::subtmat(matriz x , matriz y)
 }
 
 
-bool matriz::multmat(matriz x , matriz y)
+/*bool matriz::multmat(matriz x , matriz y)
 {
-    if(x.l != y.l || x.c != y.c)
+    if(x.c != y.l)
     {
         return false;
     }
@@ -109,7 +109,7 @@ bool matriz::multmat(matriz x , matriz y)
 
         return true;
 
-}
+}*/
 
 bool matriz::trisup()
 {
@@ -155,6 +155,95 @@ bool matriz::matsim()
     }
                return true;
 }
+
+bool matriz::matantsim()
+{
+    for(int i=1;i<l;i++)
+    {
+       for(int j=0;j<c && i != j; j++)
+       {
+         if((mat[i][j] + mat[j][i]) != 0)
+         {
+             return false;
+         }
+       }
+    }
+             return true;
+}
+
+bool matriz::matidentidade()
+{
+     for(int i=0;i<l;i++)
+    {
+       for(int j=0;j<c && i == j; j++)
+       {
+         if(mat[i][j] != 1)
+         {
+             return false;
+         }
+       }
+    }
+
+    for(int i=1;i<l;i++)
+    {
+       for(int j=0;j<c && i != j; j++)
+       {
+         if(mat[i][j] != 0)
+         {
+             return false;
+         }
+       }
+    }
+
+    for(int i=0;i<l-1;i++)
+    {
+        for(int j=i+1;j<c && i != j; j++)
+        {
+            if(mat[i][j] != 0)
+            {
+                return false;
+            }
+        }
+    }
+
+                return true;
+
+}
+
+void matriz::mattransposta()
+{
+   if(l == c)
+   {
+       for(int i=0;i<l;i++)
+	   {
+		 for(int j=0;j<c;j++)
+		 {
+			cout<<mat[j][i]<<" ";
+		 }
+		    cout<<"\n";
+	   }
+   }
+
+   else
+   {
+       int aux;
+       aux = l;
+       l = c;
+       c = aux;
+
+       for(int i=0;i<l;i++)
+	   {
+		 for(int j=0;j<c;j++)
+		 {
+			cout<<mat[j][i]<<" ";
+		 }
+		    cout<<"\n";
+	   }
+
+   }
+
+}
+
 
 matriz::~matriz()
 {
