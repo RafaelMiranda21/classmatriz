@@ -37,7 +37,11 @@ int main()
 	cout<<"Tecle '6' Para saber se a matriz e simetrica\n";
 	cout<<"Tecle '7' Para saber se a matriz e anti-simetrica\n";
 	cout<<"Tecle '8' Para saber se a matriz e uma matriz identidade\n";
-	cout<<"Tecle '9' Para saber a matriz transposta\n\n";
+	cout<<"Tecle '9' Para saber a matriz transposta\n";
+	cout<<"Tecle '10' Para saber a potenciacao da matriz\n\n";
+	cout<<"Tecle '11' Para saber a multiplicacao de uma matriz por k\n";
+	cout<<"Tecle '12' Para saber se as natrizes sao iguais\n";
+	cout<<"Tecle '13' Para saber se as matrizes sao diferentes\n\n";
 
     cout<<"Sua escolha e: ";
 	cin>>escolha;
@@ -297,17 +301,32 @@ int main()
             mat2.mattransposta();
         }
         break;
-        
-        
-        
-        
 
+    case 12:
+        cout<<"\t\t\tPara saber se as matrizes sao iguais!\n\n";
+        cout<<"\n\n";
+        if(mat1.matrizigual(mat2))
+        {
+            cout<<"Sim as matrizes sao iguais!!";
+        }
+        else
+        {
+            cout<<"Nao as matrizes sao diferentes!!";
+        }
+        break;
 
-
-
-
-
-
+    case 13:
+        cout<<"\t\t\tPara saber se as matrizes sao diferentes!\n\n";
+        cout<<"\n\n";
+        if(mat1.matrizdiferente(mat2))
+        {
+            cout<<"Sim as matrizes sao diferentes!!";
+        }
+        else
+        {
+            cout<<"Nao as matrizes sao iguais!!";
+        }
+        break;
 
 
     default:
