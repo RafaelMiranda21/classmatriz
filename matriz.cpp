@@ -89,7 +89,7 @@ bool matriz::subtmat(matriz x , matriz y)
 }
 
 
-/*bool matriz::multmat(matriz x , matriz y)
+bool matriz::multmat(matriz x , matriz y)
 {
     if(x.c != y.l)
     {
@@ -97,19 +97,26 @@ bool matriz::subtmat(matriz x , matriz y)
     }
 
     l = x.l;
-    c = x.c;
+    c = y.c;
+    int aux = 0;
 
-    for(int i=0;i<l;i++)
+    for(int i=0; i<x.l; i++)
     {
-        for(int j=0;j<c;j++)
+        for(int j=0; j<y.c; j++)
         {
-            mat[i][j] = x.mat[i][j] * y.mat[i][j];
+                 mat[i][j]=0;
+                 for(int z=0; z<y.l; z++)
+                 {
+                  aux = aux + (x.mat[i][z] * y.mat[z][j]);
+                 }
+                 mat[i][j] = aux;
+                 aux = 0;
         }
     }
 
-        return true;
+    return true;
 
-}*/
+}
 
 bool matriz::trisup()
 {
@@ -241,6 +248,51 @@ void matriz::mattransposta()
 	   }
 
    }
+
+}
+bool matriz::matrizigual(matriz x)
+{
+    if(l != x.l || c != x.c)
+    {
+        return false;
+    }
+
+    for(int i=0; i<l; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            if(mat[i][j] != x.mat[i][j])
+                {
+                    return false;
+                }
+        }
+    }
+
+                    return true;
+
+
+}
+
+bool matriz::matrizdiferente(matriz x)
+{
+    if(l != x.l || c != x.c)
+    {
+        return true;
+    }
+
+
+    for(int i=0; i<l; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            if(mat[i][j] != x.mat[i][j])
+                {
+                   return true;
+                }
+        }
+    }
+
+                   return false;
 
 }
 
