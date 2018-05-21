@@ -296,6 +296,20 @@ bool matriz::matrizdiferente(matriz x)
 
 }
 
+void matriz::matrizk(matriz x , int k)
+{
+    l = x.l;
+    c = x.c;
+
+    for(int i=0; i<l; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            mat[i][j] = x.mat[i][j] * k;
+        }
+    }
+}
+
 
 matriz::~matriz()
 {
