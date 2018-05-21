@@ -25,6 +25,7 @@ public:
 	//bool potmat(matriz x);
 	bool matrizigual(matriz x);
 	bool matrizdiferente(matriz x);
+	void matrizk(matriz x , int k);
 
 	~matriz();
 
