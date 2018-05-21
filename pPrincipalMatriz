@@ -4,7 +4,7 @@
 
 int main()
 {
-	int ql1,qc1,ql2,qc2,numero;
+	int ql1,qc1,ql2,qc2,numero,flag = 1;
 
 	cout<<"Digite o limite de linhas e de colunas da primeira matriz\n";
 	cin>>ql1>>qc1;
@@ -27,6 +27,9 @@ int main()
 	mat2.lermat();
 	cout<<"\n\n";
 
+do
+{
+
 	cout<<"\t\t\t\tescolha a operacao a ser executada!!\n";
 
 	cout<<"Tecle '1' Para obter a soma das duas matrizes\n";
@@ -38,7 +41,7 @@ int main()
 	cout<<"Tecle '7' Para saber se a matriz e anti-simetrica\n";
 	cout<<"Tecle '8' Para saber se a matriz e uma matriz identidade\n";
 	cout<<"Tecle '9' Para saber a matriz transposta\n";
-	cout<<"Tecle '10' Para saber a potenciacao da matriz\n\n";
+	cout<<"Tecle '10' Para saber a potenciacao da matriz\n";
 	cout<<"Tecle '11' Para saber a multiplicacao de uma matriz por k\n";
 	cout<<"Tecle '12' Para saber se as natrizes sao iguais\n";
 	cout<<"Tecle '13' Para saber se as matrizes sao diferentes\n\n";
@@ -46,29 +49,60 @@ int main()
     cout<<"Sua escolha e: ";
 	cin>>escolha;
     cout<<"\n\n";
+
+
+
 	switch(escolha)
 	{
     case 1:
-        cout<<"\t\t\tSoma das matrizes!\n\n";
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+        cout<<"\t\t\t\tSoma das matrizes\n\n";
+
         if(mat3.somamat(mat1,mat2))
         {
          mat3.impmat();
         }
         else
         {
-          cout<<"nao e possivel obter a soma!";
+          cout<<"Nao e possivel obter a soma!";
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 2:
-        cout<<"\t\t\tSubtracao das matrizes!\n\n";
-
         cout<<"Tecle 1 se quiser fazer matriz 1 - matriz 2\n";
         cout<<"Tecle 2 se quiser fazer matriz 2 - matriz 1\n";
         cout<<"sua escolha e: ";
         cin>>numero;
 
         cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+        cout<<"\t\t\tSubtracao das matrizes!\n\n";
 
         if(numero == 1)
         {
@@ -78,7 +112,7 @@ int main()
            }
            else
            {
-             cout<<"nao e possivel obter a subtracao!";
+             cout<<"Nao e possivel obter a subtracao!";
            }
         }
         else
@@ -89,13 +123,32 @@ int main()
            }
            else
            {
-             cout<<"nao e possivel obter a subtracao!";
+             cout<<"Nao e possivel obter a subtracao!";
            }
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 3:
-         cout<<"\t\t\tmultiplicacao das matrizes!\n\n";
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+        cout<<"\t\t\tmultiplicacao das matrizes!\n\n";
 
         if(mat3.multmat(mat1 , mat2))
         {
@@ -103,8 +156,19 @@ int main()
         }
         else
         {
-            cout<<"nao e possivel obter a multiplicacao!";
+            cout<<"Nao e possivel obter a multiplicacao!";
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 4:
@@ -117,11 +181,20 @@ int main()
 
          cout<<"\n\n";
 
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+
         if(numero == 1)
         {
             if(mat1.trisup())
             {
-              cout<<"Sim e uma matriz triangular superior!";
+              cout<<"Sim, e uma matriz triangular superior!";
             }
             else
             {
@@ -132,13 +205,24 @@ int main()
         {
             if(mat2.trisup())
            {
-             cout<<"Sim e uma matriz triangular superior!";
+             cout<<"Sim, e uma matriz triangular superior!";
            }
             else
            {
              cout<<"Nao e uma matriz triangular superior!";
            }
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 5:
@@ -151,11 +235,22 @@ int main()
 
         cout<<"\n\n";
 
+        cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+
         if(numero == 1)
         {
             if(mat1.triinf())
             {
-              cout<<"Sim e uma matriz triangular inferior!";
+              cout<<"Sim, e uma matriz triangular inferior!";
             }
             else
             {
@@ -166,13 +261,24 @@ int main()
         {
             if(mat2.triinf())
            {
-             cout<<"Sim e uma matriz triangular inferior!";
+             cout<<"Sim, e uma matriz triangular inferior!";
            }
             else
            {
              cout<<"Nao e uma matriz triangular inferior!";
            }
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 6:
@@ -185,11 +291,19 @@ int main()
 
         cout<<"\n\n";
 
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
          if(numero == 1)
          {
              if(mat1.matsim())
              {
-              cout<<"Sim e uma matriz simetrica!";
+              cout<<"Sim, e uma matriz simetrica!";
              }
              else
              {
@@ -201,13 +315,24 @@ int main()
          {
              if(mat2.matsim())
              {
-              cout<<"Sim e uma matriz simetrica!";
+              cout<<"Sim, e uma matriz simetrica!";
              }
              else
              {
               cout<<"Nao e uma matriz simetrica!";
              }
          }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
          break;
 
     case 7:
@@ -220,12 +345,20 @@ int main()
 
         cout<<"\n\n";
 
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
 
          if(numero == 1)
          {
              if(mat1.matantsim())
              {
-              cout<<"Sim e uma matriz anti-simetrica!";
+              cout<<"Sim, e uma matriz anti-simetrica!";
              }
              else
              {
@@ -237,13 +370,24 @@ int main()
          {
              if(mat2.matantsim())
              {
-              cout<<"Sim e uma matriz anti-simetrica!";
+              cout<<"Sim, e uma matriz anti-simetrica!";
              }
              else
              {
               cout<<"Nao e uma matriz anti-simetrica!";
              }
          }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
          break;
 
     case 8:
@@ -256,11 +400,19 @@ int main()
 
         cout<<"\n\n";
 
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
         if(numero == 1)
         {
             if(mat1.matidentidade())
             {
-                cout<<"Sim e uma matriz identidade!";
+                cout<<"Sim, e uma matriz identidade!";
             }
             else
             {
@@ -272,17 +424,28 @@ int main()
         {
             if(mat2.matidentidade())
             {
-                cout<<"Sim e uma matriz identidade!";
+                cout<<"Sim, e uma matriz identidade!";
             }
             else
             {
                 cout<<"Nao e uma matriz identidade!";
             }
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
         break;
 
     case 9:
-        cout<<"\t\t\tPara saber a matriz transposta!\n\n";
+
         cout<<"Qual matriz deseja verificar?\n";
         cout<<"Tecle '1' se deseja transformar a matriz 1\n";
         cout<<"Tecle '2' se deseja transformar a matriz 2\n";
@@ -290,6 +453,14 @@ int main()
         cin>>numero;
 
         cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\t\t\tPara saber a matriz transposta!\n\n";
 
         if(numero == 1)
         {
@@ -300,32 +471,142 @@ int main()
         {
             mat2.mattransposta();
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
+
         break;
+
+    case 11:
+        cout<<"Qual matriz deseja multiplicar por k?\n";
+        cout<<"Tecle '1' se deseja transformar a matriz 1\n";
+        cout<<"Tecle '2' se deseja transformar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+        cout<<"\n\n";
+
+        int k;
+
+        cout<<"Qual o valor que vai multiplicar a matriz? ";
+        cin>>k;
+
+        cout<<"\n\n";
+
+         if(numero == 1)
+        {
+             cout<<"\t\t\t\tMatriz 1\n\n";
+             mat1.impmat();
+
+             cout<<"\t\t\t\tMatriz multiplicada por "<<k<<"\n\n";
+
+             mat3.matrizk(mat1 , k);
+             mat3.impmat();
+        }
+
+        if(numero == 2)
+        {
+            cout<<"\t\t\t\tMatriz 2\n\n";
+            mat2.impmat();
+
+
+            cout<<"\t\t\t\tMatriz multiplicada por "<<k<<"\n\n";
+
+            mat3.matrizk(mat2 , k);
+            mat3.impmat();
+        }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
+
+        break;
+
+
+
 
     case 12:
         cout<<"\t\t\tPara saber se as matrizes sao iguais!\n\n";
+
         cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
         if(mat1.matrizigual(mat2))
         {
-            cout<<"Sim as matrizes sao iguais!!";
+            cout<<"Sim, as matrizes sao iguais!!";
         }
         else
         {
-            cout<<"Nao as matrizes sao diferentes!!";
+            cout<<"Nao, as matrizes sao diferentes!!";
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
+
         break;
 
     case 13:
         cout<<"\t\t\tPara saber se as matrizes sao diferentes!\n\n";
+
         cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
         if(mat1.matrizdiferente(mat2))
         {
-            cout<<"Sim as matrizes sao diferentes!!";
+            cout<<"Sim, as matrizes sao diferentes!!";
         }
         else
         {
-            cout<<"Nao as matrizes sao iguais!!";
+            cout<<"Nao, as matrizes sao iguais!!";
         }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
+
         break;
 
 
@@ -333,6 +614,8 @@ int main()
         cout<<"VALOR TECLADO INVALIDO PROGRAMA FINALIZADO!!";
 
 	}
+}
+while(flag);
 cout<<"\n\n\n";
 
 
