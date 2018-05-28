@@ -22,7 +22,7 @@ public:
 	bool matantsim();
 	bool matidentidade();
 	void mattransposta();
-	//bool potmat(matriz x);
+	bool potmat(matriz x , int n);
 	bool matrizigual(matriz x);
 	bool matrizdiferente(matriz x);
 	void matrizk(matriz x , int k);
