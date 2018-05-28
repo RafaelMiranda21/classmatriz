@@ -485,6 +485,72 @@ do
 
         break;
 
+    case 10:
+        int n;
+        cout<<"Qual matriz deseja calcular a pontenciacao?\n";
+        cout<<"Tecle '1' se deseja transformar a matriz 1\n";
+        cout<<"Tecle '2' se deseja transformar a matriz 2\n";
+        cout<<"sua escolha e: ";
+        cin>>numero;
+
+        cout<<"\n\n";
+
+        cout<<"\t\t\t\tMatriz 1\n\n";
+        mat1.impmat();
+
+        cout<<"\n\n\t\t\t\tMatriz 2\n\n";
+        mat2.impmat();
+
+        cout<<"\n\n";
+
+
+        cout<<"Digite o valor da potencia da matriz escolhida: ";
+        cin>>n;
+
+        cout<<"\n\n";
+
+        if(numero == 1)
+        {
+            if(mat3.potmat(mat1 , n))
+            {
+             cout<<"\t\t\tMatriz 1 Elevada a "<<n<<" !\n\n";
+
+             mat3.impmat();
+            }
+            else
+            {
+             cout<<"Nao e possivel calcular a potencia dessa matriz com essas dimenssoes!!";
+            }
+
+        }
+
+        if(numero == 2)
+        {
+            if(mat3.potmat(mat2 , n))
+            {
+             cout<<"\t\t\tMatriz 2 Elevada a "<<n<<" !\n\n";
+
+             mat3.impmat();
+            }
+            else
+            {
+             cout<<"Nao e possivel calcular a potencia dessa matriz com essas dimenssoes!!";
+            }
+        }
+
+        cout<<"\n\n\n";
+
+        cout<<"\t\t\t\tDesaja escolher outra operaçao ?\n";
+        cout<<"[1] Sim!\n";
+        cout<<"[0] Nao!\n";
+
+        cout<<"Sua escolha: ";
+        cin>>flag;
+
+        cout<<"\n\n\n";
+
+        break;
+
     case 11:
         cout<<"Qual matriz deseja multiplicar por k?\n";
         cout<<"Tecle '1' se deseja transformar a matriz 1\n";
