@@ -250,6 +250,69 @@ void matriz::mattransposta()
    }
 
 }
+
+bool matriz::potmat(matriz x , int n)
+{
+    if(x.l != x.c)
+    {
+        return false;
+    }
+
+    c = l = x.l;
+
+    int mataux[l][c];
+
+    for(int i=0;i<l;i++)
+    {
+        for(int j=0; j<c;j++)
+        {
+            mataux[i][j] = x.mat[i][j];
+        }
+    }
+
+   for(int p=0; p<n-1; p++)
+   {
+    for(int i=0; i<l; i++)
+    {
+      for(int j=0; j<c; j++)
+      {
+       mat[i][j] = 0;
+        for(int m=0; m<c; m++)
+        {
+         mat[i][j] = mat[i][j] + (mataux[i][m] * x.mat[m][j]);
+
+        }
+      }
+    }
+
+       for(int k=0; k<l; k++)
+       {
+    	 for(int z=0; z<c; z++)
+    	 {
+    		mataux[k][z] = mat[k][z];
+		 }
+	   }
+   }
+
+        return true;
+}
+
+
+
+void matriz::matrizk(matriz x , int k)
+{
+    l = x.l;
+    c = x.c;
+
+    for(int i=0; i<l; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            mat[i][j] = x.mat[i][j] * k;
+        }
+    }
+}
+
 bool matriz::matrizigual(matriz x)
 {
     if(l != x.l || c != x.c)
@@ -294,20 +357,6 @@ bool matriz::matrizdiferente(matriz x)
 
                    return false;
 
-}
-
-void matriz::matrizk(matriz x , int k)
-{
-    l = x.l;
-    c = x.c;
-
-    for(int i=0; i<l; i++)
-    {
-        for(int j=0; j<c; j++)
-        {
-            mat[i][j] = x.mat[i][j] * k;
-        }
-    }
 }
 
 
